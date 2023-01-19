@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('gender', 1)->nullable(false)->default('n'); // male (m), female (f), third(t), not-disclosed (n)
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
