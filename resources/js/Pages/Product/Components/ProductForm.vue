@@ -70,16 +70,16 @@ const submitProduct = () => {
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
                 <form @submit.prevent="submitProduct" class="space-y-4">
                     <label for="name" class="block font-medium text-sm text-gray-700">Product Name:</label>
-                    <input v-model="productName" type="text" id="name" class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
+                    <input v-model="productName" type="text" id="name" required class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
 
                     <label for="sku" class="block font-medium text-sm text-gray-700">SKU:</label>
-                    <input v-model="productSku" type="text" id="sku" class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
+                    <input v-model="productSku" type="text" id="sku" required class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
 
                     <label for="price" class="block font-medium text-sm text-gray-700">Price:</label>
-                    <input v-model="productPrice" type="number" id="price" class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
+                    <input v-model="productPrice" type="text" id="price" required class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
 
                     <label for="units_sold" class="block font-medium text-sm text-gray-700">Units Sold:</label>
-                    <input v-model="productUnitsSold" type="number" id="units_sold" class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
+                    <input v-model="productUnitsSold" type="number" id="units_sold" required class="border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 rounded-md shadow-sm w-full p-2">
 
                     <div class="flex justify-between mt-6">
                         <NavLink :href="route('dashboard.products.index', { page: currentPage })" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Back</NavLink>
