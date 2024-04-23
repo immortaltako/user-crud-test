@@ -12,7 +12,7 @@ class ProductFactory extends Factory
 
     public function definition()
     {
-        $specificNames = [
+        $medicineNames = [
             'Humira (Adalimumab)',
             'Keytruda (Pembrolizumab)',
             'Revlimid (Lenalidomide)',
@@ -57,10 +57,43 @@ class ProductFactory extends Factory
             'Repatha (Evolocumab)',
             'Veklury (Remdesivir)',
             'Opsumit (Macitentan)',
+            'Lamisil (Terbinafine)',
+            'Prozac (Fluoxetine)',
+            'Lyrica (Pregabalin)',
+            'Zoloft (Sertraline)',
+            'Abilify (Aripiprazole)',
+            'Cymbalta (Duloxetine)',
+            'Neurontin (Gabapentin)',
+            'Seroquel (Quetiapine)',
+            'Effexor (Venlafaxine)',
+            'Remeron (Mirtazapine)',
+            'Depakote (Divalproex)',
+            'Celexa (Citalopram)',
+            'Zyprexa (Olanzapine)',
+            'Risperdal (Risperidone)',
+            'Lithobid (Lithium)',
+            'Paxil (Paroxetine)',
+            'Ritalin (Methylphenidate)',
+            'Adderall (Amphetamine)',
+            'Strattera (Atomoxetine)',
+            'Concerta (Methylphenidate)',
+            'Wellbutrin (Bupropion)',
+            'Lunesta (Eszopiclone)',
+            'Ambien (Zolpidem)',
+            'Provigil (Modafinil)',
+            'Nuvigil (Armodafinil)',
+            'Trazodone (Desyrel)',
+            'Lexapro (Escitalopram)',
+            'Vicodin (Hydrocodone/paracetamol)',
+            'OxyContin (Oxycodone)',
+            'Percocet (Oxycodone/paracetamol)',
+            'Dilaudid (Hydromorphone)',
+            'Suboxone (Buprenorphine/naloxone)',
+            'Methadone (Dolophine)',
         ];
 
         return [
-            'name' => $this->faker->unique()->randomElement($specificNames),
+            'name' => $this->faker->unique()->randomElement($medicineNames),
             'sku' => 'SKU-' . strtoupper(substr(md5($this->faker->word), 0, 8)),
             'category_id' => Category::factory(),
             'price' => $this->faker->randomFloat(2, 1, 1000),

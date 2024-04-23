@@ -41,6 +41,12 @@ class HandleInertiaRequests extends Middleware
                 'banner' => $request->session()->get('flash.banner'),
                 'dangerBanner' => $request->session()->get('flash.dangerBanner'),
             ],
+//             'errors' => function () use ($request) {
+//                 return $request->session()->get('errors')
+//                     ? $request->session()->get('errors')->getMessages()
+//                     : (object) [];
+//             },
+
         ]);
     }
 }

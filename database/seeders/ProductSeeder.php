@@ -12,7 +12,7 @@ class ProductSeeder extends Seeder
     {
         $categories = Category::whereIn('name', ['Immunotherapy Drugs', 'Cardiovascular Drugs', 'Oncology Drugs'])->get();
 
-        $specificNames = [
+        $medicineNames = [
             'Humira (Adalimumab)',
             'Keytruda (Pembrolizumab)',
             'Revlimid (Lenalidomide)',
@@ -57,15 +57,48 @@ class ProductSeeder extends Seeder
             'Repatha (Evolocumab)',
             'Veklury (Remdesivir)',
             'Opsumit (Macitentan)',
+            'Lamisil (Terbinafine)',
+            'Prozac (Fluoxetine)',
+            'Lyrica (Pregabalin)',
+            'Zoloft (Sertraline)',
+            'Abilify (Aripiprazole)',
+            'Cymbalta (Duloxetine)',
+            'Neurontin (Gabapentin)',
+            'Seroquel (Quetiapine)',
+            'Effexor (Venlafaxine)',
+            'Remeron (Mirtazapine)',
+            'Depakote (Divalproex)',
+            'Celexa (Citalopram)',
+            'Zyprexa (Olanzapine)',
+            'Risperdal (Risperidone)',
+            'Lithobid (Lithium)',
+            'Paxil (Paroxetine)',
+            'Ritalin (Methylphenidate)',
+            'Adderall (Amphetamine)',
+            'Strattera (Atomoxetine)',
+            'Concerta (Methylphenidate)',
+            'Wellbutrin (Bupropion)',
+            'Lunesta (Eszopiclone)',
+            'Ambien (Zolpidem)',
+            'Provigil (Modafinil)',
+            'Nuvigil (Armodafinil)',
+            'Trazodone (Desyrel)',
+            'Lexapro (Escitalopram)',
+            'Vicodin (Hydrocodone/paracetamol)',
+            'OxyContin (Oxycodone)',
+            'Percocet (Oxycodone/paracetamol)',
+            'Dilaudid (Hydromorphone)',
+            'Suboxone (Buprenorphine/naloxone)',
+            'Methadone (Dolophine)',
         ];
 
-        foreach ($specificNames as $name) {
+        foreach ($medicineNames as $name) {
             Product::factory()->create([
                 'name' => $name,
-                'sku' => 'SKU-' . strtoupper(substr(md5($name), 0, 8)), // Create a pseudo SKU based on the product name
-                'category_id' => $categories->random()->id, // Randomly assign a category
-                'price' => rand(100, 1000), // Random price between 100 and 1000
-                'units_sold' => rand(0, 500) // Random units sold between 0 and 500
+                'sku' => 'SKU-' . strtoupper(substr(md5($name), 0, 8)),
+                'category_id' => $categories->random()->id,
+                'price' => rand(100, 1000),
+                'units_sold' => rand(0, 500)
             ]);
         }
     }

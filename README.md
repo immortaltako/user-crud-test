@@ -1,11 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# User CRUD Test
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project utilizes Jetstream/Inertia scaffolding for user management. Once logged in, users are presented with a link for Products, leading to a table dashboard for medicines with relevant data. Admin users can create, update, and delete products, while regular users have read-only access.
+
+Roles have been added so you can test the following scenarios:
+
+- Admin login: Use email `admin@app.com` and password `password` to log in as an admin. Admins can create, update, and delete products.
+- User registration: Register as a new user. Regular users have read-only permissions for the products.
+
+### Features and Technologies
+
+The project showcases several features and technologies:
+
+- **Jetstream Inertia**: Used for user management and to build a seamless, dynamic user interface.
+- **Laravel and Vue.js**: Leveraged for the backend and frontend, respectively, for a robust and interactive user experience.
+- **CRUD Operations**: Implemented for products, allowing admins to manage product data efficiently.
+- **RESTful APIs**: Used to communicate between the frontend and backend, ensuring smooth data flow.
+- **Pagination**: Implemented for better organization and navigation of product data.
+- **Search Functionality**: Implemented for products, enabling users to find specific items easily.
+- **Authentication and Authorization**: Utilized to control user access and permissions.
+- **Database Management**: Handled through MySQL, ensuring efficient data storage and retrieval.
+
+Together, these technologies and methods create a powerful and user-friendly application for managing medicine products.
+### Setup Instructions
+
+1. Clone the repository.
+2. Run `npm install` to install frontend dependencies.
+3. Run `composer install` to install backend dependencies.
+4. Set up your environment variables in the `.env` file, including your database configuration.
+5. Run `php artisan migrate` to migrate the database schema.
+6. Seed roles and permissions for admin and user roles.
+7. Start the development server with `php artisan serve`.
+8. Build the frontend assets with `npm run dev`.
+9. Access the application and test the user CRUD functionality.
+
+## About Laravel
 
 ## About Laravel
 

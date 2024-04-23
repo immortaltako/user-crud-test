@@ -59,12 +59,22 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    /**
+     * Define a many-to-many relationship between User and Role models.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function roles()
     {
         return $this->belongsToMany(Role::class);
     }
 
-    public function getIsAdminAttribute()
+    /**
+     * Check if the user is an admin.
+     *
+     * @return bool
+     */
+    public function isAdmin()
     {
         return $this->roles()->where('name', 'admin')->exists();
     }

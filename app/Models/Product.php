@@ -44,4 +44,25 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    /**
+     * Get the formatted price.
+     *
+     * @param  mixed  $value
+     * @return string
+     */
+    public function getPriceAttribute($value)
+    {
+        return number_format($value, 2, '.', '');
+    }
+
+    /**
+     * Set the SKU attribute to uppercase.
+     *
+     * @param  string  $value
+     */
+    public function setSkuAttribute($value)
+    {
+        $this->attributes['sku'] = strtoupper($value);
+    }
 }
