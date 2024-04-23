@@ -36,10 +36,14 @@ watchEffect(() => {
 
 // Submits product data to the server using the appropriate HTTP method based on the form mode.
 const submitProduct = () => {
+
+    // Preprocess the price to remove '$' and other non-numeric characters except decimal point
+    const sanitizedPrice = productPrice.value.replace(/[^\d.]/g, '');
+
     const productData = {
         name: productName.value,
         sku: productSku.value,
-        price: parseFloat(productPrice.value),
+        price: parseFloat(sanitizedPrice),
         units_sold: parseInt(productUnitsSold.value),
         page: currentPage.value
     };
